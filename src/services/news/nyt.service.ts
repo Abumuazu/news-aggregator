@@ -14,7 +14,7 @@ export const nytService = {
         params: {
           q: keyword,
           "api-key":
-            process.env.REACT_APP_NYT_KEY || "6zG1YrkCUa1YiCEgAsGTuJLStGzC7Tdy",
+            process.env.REACT_APP_NYT_KEY || "",
           begin_date: fromDate?.replaceAll('-', '')?? '',
           end_date: toDate?.replaceAll('-', '')?? '',
         },

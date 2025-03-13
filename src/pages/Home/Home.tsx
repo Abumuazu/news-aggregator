@@ -11,18 +11,23 @@ import { NewsSource } from "../../types/api.types";
 
 const Home: React.FC = () => {
   const { sources } = useSelector((state: RootState) => state.preferences);
-  const [keyword, setKeyword] = useState("");
-  const [fromDate, setFromDate] = useState(() => {
+
+  // Default values
+  const defaultKeyword = 'technology'; // Default keyword
+  const defaultFromDate = (() => {
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-    return thirtyDaysAgo.toISOString().split("T")[0];
-  });
-
-  const [toDate, setToDate] = useState(() => {
+    return thirtyDaysAgo.toISOString().split('T')[0];
+  })();
+  const defaultToDate = (() => {
     const today = new Date();
-    return today.toISOString().split("T")[0];
-  });
+    return today.toISOString().split('T')[0];
+  })();
+  const defaultSources: NewsSource[] = ['newsapi', 'guardian', 'nyt'];
 
+  const [keyword, setKeyword] = useState(defaultKeyword);
+  const [fromDate, setFromDate] = useState(defaultFromDate);
+  const [toDate, setToDate] = useState(defaultToDate);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [showPreferences, setShowPreferences] = useState(false);
 
@@ -32,7 +37,7 @@ const Home: React.FC = () => {
       fromDate,
       toDate,
     },
-    sources as NewsSource[]
+    sources.length ? sources as NewsSource[] : defaultSources
   );
 
   const handleSearch = useCallback((searchTerm: string) => {
@@ -42,7 +47,6 @@ const Home: React.FC = () => {
   const handleDateChange = useCallback((from: string, to: string) => {
     setFromDate(from);
     setToDate(to);
-    console.log("Dates updated:", { from, to });
   }, []);
 
   const handleCategoryChange = useCallback((category: string) => {
@@ -53,6 +57,12 @@ const Home: React.FC = () => {
     <div className={styles.homeContainer}>
       <header className={styles.header}>
         <SearchBar onSearch={handleSearch} />
+        <button 
+          className={styles.preferencesButton}
+          onClick={() => setShowPreferences(true)}
+        >
+          Preferences
+        </button>
       </header>
 
       <div className={styles.content}>
@@ -72,7 +82,7 @@ const Home: React.FC = () => {
 
           {isError && (
             <div className={styles.error}>
-              Error: {"Failed to fetch articles"}
+              Error: { 'Failed to fetch articles'}
             </div>
           )}
 

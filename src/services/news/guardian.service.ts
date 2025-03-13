@@ -14,7 +14,7 @@ export const guardianService = {
           q: keyword,
           "api-key":
             process.env.REACT_APP_GUARDIAN_KEY ||
-            "4e709176-1e72-413a-9149-6b27b7bec457",
+            "",
           "from-date": fromDate,
           "to-date": toDate,
 
