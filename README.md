@@ -29,3 +29,8 @@ A fully featured news aggregator built with **React**, **TypeScript**, **Redux T
 2. **Run the containe**
     docker run -p 3000:3000 news-aggregator
 
+## Env/Apis key
+1. insert apis key from Newsapi, The Guardian and New York Times in this files
+/config/api.config.ts
+services/news/* (in the params field)
+or simply add into the env folder
