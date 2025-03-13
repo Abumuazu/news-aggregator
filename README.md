@@ -18,3 +18,14 @@ A fully featured news aggregator built with **React**, **TypeScript**, **Redux T
 2. **Install dependencies**:
    ```bash
    npm install
+3. **Run locally**:
+    npm start
+4. **Run locally**:
+    npm run build
+
+## Docker
+1.  **Build the Docker image:**
+    docker build -t news-aggregator .
+2. **Run the containe**
+    docker run -p 3000:3000 news-aggregator
+
