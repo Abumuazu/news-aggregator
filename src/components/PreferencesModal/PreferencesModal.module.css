@@ -1,0 +1,43 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background-color: #111;
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .closeButton {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .field {
+    margin-bottom: 1rem;
+  }
+  
+  .checkboxGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  

@@ -1,0 +1,42 @@
+.homeContainer {
+
+
+}
+
+.sidebarSection {
+  margin-right: 1rem;
+}
+
+.articlesSection {
+}
+
+.loading {
+  font-style: italic;
+  color: #aaa;
+}
+
+.error {
+  color: red;
+  padding: 10rem;
+  font-weight: bold;
+  text-align: center;
+}
+.noResults {
+  padding: 10rem;
+  color: #aaa;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+}
+.articles{
+  padding: 10rem;
+  color: #aaa;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+}
+.articleGrid{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
